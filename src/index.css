@@ -1,0 +1,539 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter:Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter:Medium";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter:Regular";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter:Semi Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto:Regular";
+  src: url("https://static.figma.com/font/Roboto_wdth_wght__3") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SF Pro Text:Bold";
+  src: url("/fonts/SF_Pro_Text-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SF Pro Text:Light";
+  src: url("/fonts/SF_Pro_Text-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "SF Pro Text:Medium";
+  src: url("/fonts/SF_Pro_Text-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SF Pro Text:Regular";
+  src: url("/fonts/SF_Pro_Text-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SF Pro Text:Semibold";
+  src: url("/fonts/SF_Pro_Text-Semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "SF Pro:Regular";
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SF Pro:Semibold";
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+  font-style: normal;
+  font-weight: 590;
+}
+
+@layer base {
+  :root {
+    color: #111827;
+    background: #eaeaf3;
+    font-family: "SF Pro Text:Regular", Arial, sans-serif;
+    font-synthesis: none;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+  }
+
+  button,
+  input {
+    outline-color: #006e8c;
+  }
+}
+
+.app-shell {
+  min-height: 100dvh;
+  background: #eaeaf3;
+  padding: 79px 33px 80px 102px;
+  position: relative;
+}
+
+.top-navigation {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 51px;
+  overflow: hidden;
+  border-bottom: 1px solid #e8ebef;
+  background: #233e48;
+}
+
+.top-navigation-art {
+  position: absolute;
+  width: 100%;
+  height: 51px;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.breadcrumbs {
+  position: absolute;
+  top: 7px;
+  left: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 6px;
+  color: white;
+  background: #233e48;
+  font-family: "SF Pro Text:Regular";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.192px;
+}
+
+.breadcrumbs button:first-child {
+  font-family: "SF Pro Text:Light";
+  text-transform: capitalize;
+}
+
+.breadcrumbs strong {
+  font-family: "SF Pro Text:Bold";
+}
+
+.side-navigation {
+  position: absolute;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  width: 71px;
+  overflow: hidden;
+  background: white;
+}
+
+.side-navigation img {
+  display: block;
+  width: 71px;
+  height: 852px;
+}
+
+.main-card {
+  width: 100%;
+  min-height: 706px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 8px;
+  background: white;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.tabs button {
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 4px 4px 0 0;
+  color: #6b7280;
+  font: 400 16px/24px "SF Pro Text:Regular";
+  letter-spacing: 0.192px;
+  white-space: nowrap;
+}
+
+.tabs button:hover {
+  background: #f5f7f8;
+}
+
+.tabs button.active {
+  border-bottom: 4px solid #006e8c;
+  color: #006e8c;
+  font-family: "SF Pro Text:Semibold";
+  letter-spacing: 0;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  height: 48px;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 2px solid #d0d7dc;
+  border-radius: 4px;
+  color: #5f6f76;
+  font: 600 16px/24px "SF Pro Text:Semibold";
+  white-space: nowrap;
+}
+
+.action-button:hover:not(:disabled) {
+  background: #f3f6f7;
+}
+
+.action-button.primary {
+  border-color: #006e8c;
+  background: #006e8c;
+  color: white;
+}
+
+.action-button.primary:hover {
+  background: #005d77;
+}
+
+.action-button.disabled {
+  border-color: #e5e7eb;
+  background: #e5e7eb;
+  color: #989799;
+  cursor: not-allowed;
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding: 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.search-fields {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.search-fields label,
+.defaults-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  color: #111827;
+  font: 500 14px/20px "SF Pro Text:Medium";
+  letter-spacing: 0.07px;
+}
+
+.search-fields input,
+.defaults-row input {
+  width: 100%;
+  height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #111827;
+  background: white;
+  font: 400 14px/20px "SF Pro Text:Regular";
+  letter-spacing: 0.28px;
+}
+
+.search-fields input::placeholder {
+  color: #6b7280;
+}
+
+.search-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.defaults-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.defaults-row b {
+  margin-left: 2px;
+  color: #dc2626;
+}
+
+.table-section {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.entry-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.entry-summary > span {
+  color: #006e8c;
+  font: 400 12px/18px "SF Pro:Regular";
+  font-variation-settings: "wdth" 100;
+}
+
+.entry-summary label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4a5162;
+  font: 400 14px/20px "SF Pro:Regular";
+  font-variation-settings: "wdth" 100;
+}
+
+.page-size {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid #e3e6ee;
+  border-radius: 8px;
+  background: white;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pagination button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #8d8d8d;
+  font: 400 14px/20px "SF Pro:Regular";
+  font-variation-settings: "wdth" 100;
+}
+
+.pagination button:hover {
+  background: #edf3f5;
+}
+
+.pagination button.current {
+  background: #246d8b;
+  color: white;
+  font-family: "Inter:Semi Bold";
+  font-weight: 600;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d0d7dc;
+}
+
+table {
+  width: 100%;
+  min-width: 1180px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  height: 40px;
+  padding: 8px 12px;
+  border-top: 1px solid #d0d7dc;
+  border-left: 1px solid #d0d7dc;
+  text-align: left;
+}
+
+th {
+  color: #e6efef;
+  background: #347b7f;
+  font: 590 14px/20px "SF Pro:Semibold";
+  font-variation-settings: "wdth" 100;
+}
+
+td {
+  color: #111827;
+  font: 400 14px/20px "SF Pro:Regular";
+  font-variation-settings: "wdth" 100;
+}
+
+th:nth-child(1) {
+  width: 10.8%;
+}
+th:nth-child(2) {
+  width: 15.1%;
+}
+th:nth-child(3) {
+  width: 14.4%;
+}
+th:nth-child(4),
+th:nth-child(5) {
+  width: 21.8%;
+}
+th:nth-child(6) {
+  width: 12%;
+}
+
+tbody tr:nth-child(even) {
+  background: #e1ebeb;
+}
+
+td input {
+  width: 100%;
+  height: 32px;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  color: #090909;
+  font: 400 12px/18px "SF Pro:Regular";
+}
+
+td input:disabled {
+  background: #e5e7eb;
+}
+
+tbody td:nth-child(4),
+tbody td:nth-child(5) {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.toggle {
+  display: inline-flex;
+  width: 44px;
+  min-width: 44px;
+  height: 22px;
+  align-items: center;
+  padding: 2px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  transition: background 150ms ease;
+}
+
+.toggle span {
+  width: 18px;
+  height: 18px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 35, 11, 0.2);
+  transition: transform 150ms ease;
+}
+
+.toggle.checked {
+  background: #006e8c;
+}
+
+.toggle.checked span {
+  transform: translateX(22px);
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 70px 16px 40px;
+  }
+
+  .side-navigation {
+    display: none;
+  }
+
+  .breadcrumbs {
+    left: 16px;
+    max-width: calc(100% - 32px);
+    overflow-x: auto;
+  }
+
+  .main-card {
+    gap: 24px;
+    padding: 16px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+
+  .search-panel {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .search-actions {
+    flex-direction: row;
+  }
+
+  .defaults-row,
+  .search-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .table-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .entry-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
